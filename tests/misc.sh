@@ -74,7 +74,7 @@ expect()
 	if [ $? -eq 0 ]; then
 		echo "ok ${ntest}"
 	else
-		echo "not ok ${ntest}"
+		echo -e "not ok ${ntest}\n\tcommand: ${*}\n\terror: ${e}"
 	fi
 	ntest=`expr $ntest + 1`
 }
@@ -90,7 +90,7 @@ jexpect()
 	if [ $? -eq 0 ]; then
 		echo "ok ${ntest}"
 	else
-		echo "not ok ${ntest}"
+		echo -e "not ok ${ntest}\n\tcommand: ${*}\n\terror: ${e}"
 	fi
 	ntest=`expr $ntest + 1`
 }
@@ -100,7 +100,7 @@ test_check()
 	if [ $* ]; then
 		echo "ok ${ntest}"
 	else
-		echo "not ok ${ntest}"
+		echo -e "not ok ${ntest}\n\tcommand: ${*}\n\terror: ${e}"
 	fi
 	ntest=`expr $ntest + 1`
 }
